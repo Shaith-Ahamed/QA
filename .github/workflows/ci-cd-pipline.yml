@@ -57,6 +57,7 @@ jobs:
 
       - name: Build and run tests with Maven
         run: mvn clean verify  -Dtest=!**/ui/**
+#        -Dtest=!**/ui/**   remove this line to work with selanium
         env:
           SPRING_PROFILES_ACTIVE: test
           SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/testdb
