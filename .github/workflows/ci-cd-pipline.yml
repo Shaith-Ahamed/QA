@@ -37,6 +37,12 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
+      # ADD THIS STEP - Set up Chrome for Selenium tests
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+
       - name: Wait for MySQL to be ready
         run: |
           for i in {1..30}; do
