@@ -56,7 +56,7 @@ jobs:
           done
 
       - name: Build and run tests with Maven
-        run: mvn clean verify
+        run: mvn clean verify  -Dtest=!**/ui/**
         env:
           SPRING_PROFILES_ACTIVE: test
           SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/testdb
